@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/repos/asf/!svn/ver/757265/labs/platodb/trunk/src/main/java/org.atri.platodb/store/lock
+END
+SingleInstanceLockFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/repos/asf/!svn/ver/755223/labs/platodb/trunk/src/main/java/org.atri.platodb/store/lock/SingleInstanceLockFactory.java
+END
+Lock.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/repos/asf/!svn/ver/757265/labs/platodb/trunk/src/main/java/org.atri.platodb/store/lock/Lock.java
+END
+LockObtainFailedException.java
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/repos/asf/!svn/ver/755179/labs/platodb/trunk/src/main/java/org.atri.platodb/store/lock/LockObtainFailedException.java
+END
+README.txt
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/repos/asf/!svn/ver/755179/labs/platodb/trunk/src/main/java/org.atri.platodb/store/lock/README.txt
+END
+LockStressTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/repos/asf/!svn/ver/755179/labs/platodb/trunk/src/main/java/org.atri.platodb/store/lock/LockStressTest.java
+END
+LockReleaseFailedException.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/repos/asf/!svn/ver/755179/labs/platodb/trunk/src/main/java/org.atri.platodb/store/lock/LockReleaseFailedException.java
+END
+NoLockFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/repos/asf/!svn/ver/755223/labs/platodb/trunk/src/main/java/org.atri.platodb/store/lock/NoLockFactory.java
+END
+LockListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/repos/asf/!svn/ver/757265/labs/platodb/trunk/src/main/java/org.atri.platodb/store/lock/LockListener.java
+END
+LockFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/repos/asf/!svn/ver/755179/labs/platodb/trunk/src/main/java/org.atri.platodb/store/lock/LockFactory.java
+END
+NativeFSLockFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/repos/asf/!svn/ver/755223/labs/platodb/trunk/src/main/java/org.atri.platodb/store/lock/NativeFSLockFactory.java
+END
+NoSuchDirectoryException.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/repos/asf/!svn/ver/755179/labs/platodb/trunk/src/main/java/org.atri.platodb/store/lock/NoSuchDirectoryException.java
+END
+SimpleFSLockFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/repos/asf/!svn/ver/755223/labs/platodb/trunk/src/main/java/org.atri.platodb/store/lock/SimpleFSLockFactory.java
+END
+VerifyingLockFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/repos/asf/!svn/ver/755223/labs/platodb/trunk/src/main/java/org.atri.platodb/store/lock/VerifyingLockFactory.java
+END
+LockVerifyServer.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/repos/asf/!svn/ver/755179/labs/platodb/trunk/src/main/java/org.atri.platodb/store/lock/LockVerifyServer.java
+END

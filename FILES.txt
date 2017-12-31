@@ -1,0 +1,148 @@
+= Files =
+
+== [0-9]+.v ==
+
+Values postings partition file.
+
+This file is NOT affected by rehashing.
+
+Header: 1024 bytes
+{{{
+
+int         Offset in this partition for next new posting.
+int         Bytes left for use in this partition.
+
+}}}
+
+
+Posting data:
+{{{
+
+byte        Flag
+            0 = never used
+            1 = in use
+            2 = deleted
+
+int         Length in bytes of serializaed value.
+            0 == null
+byte[]      Serialized value.
+
+}}}
+
+== [0-9]+.k ==
+
+Key postings partition file.
+
+Chained postings. Each posting contains a unique key value and points at how to
+find the value associated with this key.
+
+This file is NOT affected by rehashing.
+
+Header: 1024 bytes
+{{{
+
+int         Offset in this partition for next new posting.
+int         Bytes left for use in this partition.
+
+}}}
+
+Posting data:
+{{{
+
+byte        Flag
+            0 = never used
+            1 = in use
+            2 = deleted
+
+int         Partition id of next key posting with the same hash code.
+            -1 == end of keys chain
+int         Offset in above key postings partition.
+
+long        Key hash code
+
+int         Paritition id of value posting.
+            -1 == null
+int         Offset in above value postings partition.
+
+int         Length in bytes of serialized key.
+byte[]      Serialized key
+
+}}}
+
+== [0-9]+.hc ==
+
+Hash code postings partition file.
+
+Chained postings. Each postings has a unique hash code value and points at how to find
+the key posting for this hash code.
+
+This file is affected by rehashing.
+
+Header: 1024 bytes
+{{{
+
+int         Offset in this partition for next new posting.
+int         Bytes left for use in this partition.
+
+}}}
+
+Posting data:
+{{{
+
+byte        Flag
+            0 = never used
+            1 = in use
+            2 = deleted
+
+long        Key hash code.
+
+int         Partition id of next hash code posting with the same hashtable posting position.
+            -1 == null
+int         Offset in above hash code postings partition.
+
+int         Partition id of first key posting with this hash code.
+int         Offset in above key postings partition.
+
+}}}
+
+== [0-9]+.ht ==
+
+Hashtable file. There is never more than one of these that are valid at any given time.
+
+The position in the hashtable for a given hash code is calculated as (hash & (capacity - 1)).
+At this position there is a posting that points at the first known hash code posting.
+
+This file is affected by rehashing.
+
+Header: 1024 bytes
+{{{
+
+int         This hashtable postings file capacity.
+
+}}}
+
+
+Posting data:
+{{{
+
+int         Partition id of first hash code posting with this hashtable position.
+            -1 == null
+int         Offset in above hash code postings partition.
+
+}}}
+
+== metadata ==
+
+Contains information about the database.
+
+{{{
+
+int         File format version. 
+long        Commit version, will increase by one after each modification to the database.
+int         Current hashtable file id. -- will change after rehash.
+int         Current hash code partition
+int         Current keys partition
+int         Current values partition
+long        Total number of value postings.
+
+}}}

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repos/asf/!svn/ver/792517/labs/platodb/trunk/src/test/java/org.atri.platodb/entity
+END
+EntityStoreTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/repos/asf/!svn/ver/759274/labs/platodb/trunk/src/test/java/org.atri.platodb/entity/EntityStoreTest.java
+END
+TestEntityStore.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/repos/asf/!svn/ver/792517/labs/platodb/trunk/src/test/java/org.atri.platodb/entity/TestEntityStore.java
+END
+TestTransactionRevisions.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/repos/asf/!svn/ver/789204/labs/platodb/trunk/src/test/java/org.atri.platodb/entity/TestTransactionRevisions.java
+END

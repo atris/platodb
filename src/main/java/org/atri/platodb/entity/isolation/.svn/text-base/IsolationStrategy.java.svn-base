@@ -1,0 +1,35 @@
+package org.atri.platodb.entity.isolation;
+
+import org.atri.platodb.entity.Transaction;
+
+import java.io.IOException;
+
+/**
+ * Consider the following scenario:
+ *
+ * The database contains an entry with the primary key A.
+ *
+ * Transaction T1 begins.
+ * Transaction T2 begins.
+ * T1 removes A.
+ * T2 removes A.
+ * T1 commit.
+ * Transaction T3 begins.
+ * T3 create a new entry with primary key A.
+ * T3 commit
+ * T2 commit.
+ *
+ * Should the entry A that T3 created and commited just before T2 commited still be in the database?
+ * Should perhaps an exception be thrown in T2?
+ *
+ * This is what isolation strategies is all about.
+ * 
+ * @author atri
+ * @since 2017-mar-14 15:39:32
+ */
+public interface IsolationStrategy {
+
+  public abstract void checkVersion(Transaction txn) throws IOException;
+  public abstract int getCountModifier();
+
+}

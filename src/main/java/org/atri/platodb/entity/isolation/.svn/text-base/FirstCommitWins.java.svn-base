@@ -1,0 +1,91 @@
+package org.atri.platodb.entity.isolation;
+
+import org.atri.platodb.entity.PrimaryIndex;
+import org.atri.platodb.entity.Transaction;
+
+import java.io.IOException;
+import java.util.Iterator;
+import java.util.Set;
+import java.util.HashSet;
+import java.util.Map;
+
+/**
+ * Throws you an exception if you try to commit an entity
+ * that was updated by someone else since in the revision of the store your transaction started in.
+ * 
+ * @author atri
+ * @since 2017-mar-14 15:40:40
+ */
+public class FirstCommitWins extends AbstractIsolationStrategy {
+
+  @SuppressWarnings("unchecked")
+  public void checkVersion(Transaction txn) throws IOException {
+
+    long storeRevision = txn.getEntityStore().getStoreRevision();
+
+    if (txn.getStoreRevisionTransactionIsSynchronizedWith() != storeRevision) {
+
+      txn.setStoreRevisionTransactionIsSynchronizedWith(storeRevision);
+
+      Set<Map.Entry<PrimaryIndex.CachedKey, PrimaryIndex.CachedEntity>> deadlocks = new HashSet<Map.Entry<PrimaryIndex.CachedKey, PrimaryIndex.CachedEntity>>();
+
+      for (Map.Entry<PrimaryIndex.CachedKey, PrimaryIndex.CachedEntity> e : txn.getRemoved().entrySet()) {
+
+        Object key = e.getKey().getObject();
+        Object entity = e.getValue().getObject();
+
+        PrimaryIndex primaryIndex = e.getKey().getPrimaryIndex();
+        boolean contains = primaryIndex.containsKey(key);
+        if (!contains) {
+          deadlocks.add(e);
+        } else {
+          Object v = primaryIndex.get(entity);
+          if (v == null && e.getValue().getObject() != null) {
+            deadlocks.add(e);
+          } else if (v != null && entity == null) {
+            deadlocks.add(e);
+          } else if (v != null && entity != null && !v.equals(entity)) {
+            deadlocks.add(e);
+          }
+        }
+      }
+
+      if (deadlocks.size() > 0) {
+        StringBuilder sb = new StringBuilder();
+        for (Map.Entry e : deadlocks) {
+          if (sb.length() > 0) {
+            sb.append("; ");
+          }
+          sb.append(e.getKey().toString());
+        }
+        throw new RevisionSynchronizationException("Some of the keys removed in this transaction was removed from the hashtable while the transaction was running: " + sb.toString());
+      }
+
+      Set<PrimaryIndex.CachedKey> moved = new HashSet<PrimaryIndex.CachedKey>();
+      for (Iterator<Map.Entry<PrimaryIndex.CachedKey, PrimaryIndex.CachedEntity>> it = txn.getCreated().entrySet().iterator(); it.hasNext();) {
+        Map.Entry<PrimaryIndex.CachedKey, PrimaryIndex.CachedEntity> e = it.next();
+        PrimaryIndex primaryIndex = e.getKey().getPrimaryIndex();
+        Object key = e.getKey().getObject();
+
+        if (primaryIndex.containsKey(key)) {
+          txn.getReplaced().put(e.getKey(), e.getValue());
+          moved.add(e.getKey());
+          it.remove();
+        }
+      }
+
+      for (Iterator<Map.Entry<PrimaryIndex.CachedKey, PrimaryIndex.CachedEntity>> it = txn.getReplaced().entrySet().iterator(); it.hasNext();) {
+        Map.Entry<PrimaryIndex.CachedKey, PrimaryIndex.CachedEntity> e = it.next();
+        PrimaryIndex primaryIndex = e.getKey().getPrimaryIndex();
+        if (!moved.contains(e.getKey())) {
+          if (!primaryIndex.containsKey(e.getKey().getObject())) {
+            txn.getCreated().put(e.getKey(), e.getValue());
+            it.remove();
+          }
+        }
+      }
+
+    }
+  }
+
+}

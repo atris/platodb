@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/repos/asf/!svn/ver/792517/labs/platodb/trunk/src/main/java/org.atri.platodb/store/data/platotrie
+END
+KeysPartition.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/repos/asf/!svn/ver/792517/labs/platodb/trunk/src/main/java/org.atri.platodb/store/data/platotrie/KeysPartition.java
+END
+ValuesPartition.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/repos/asf/!svn/ver/788856/labs/platodb/trunk/src/main/java/org.atri.platodb/store/data/platotrie/ValuesPartition.java
+END
+HashCodesPartition.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/repos/asf/!svn/ver/759796/labs/platodb/trunk/src/main/java/org.atri.platodb/store/data/platotrie/HashCodesPartition.java
+END
+Hashtable.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/repos/asf/!svn/ver/759796/labs/platodb/trunk/src/main/java/org.atri.platodb/store/data/platotrie/Hashtable.java
+END

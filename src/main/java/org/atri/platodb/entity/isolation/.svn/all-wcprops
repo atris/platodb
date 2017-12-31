@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/repos/asf/!svn/ver/789204/labs/platodb/trunk/src/main/java/org.atri.platodb/entity/isolation
+END
+AbstractIsolationStrategy.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/repos/asf/!svn/ver/789204/labs/platodb/trunk/src/main/java/org.atri.platodb/entity/isolation/AbstractIsolationStrategy.java
+END
+LastCommitWins.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/repos/asf/!svn/ver/789204/labs/platodb/trunk/src/main/java/org.atri.platodb/entity/isolation/LastCommitWins.java
+END
+RevisionSynchronizationException.java
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/repos/asf/!svn/ver/789204/labs/platodb/trunk/src/main/java/org.atri.platodb/entity/isolation/RevisionSynchronizationException.java
+END
+FirstCommitWins.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/repos/asf/!svn/ver/789204/labs/platodb/trunk/src/main/java/org.atri.platodb/entity/isolation/FirstCommitWins.java
+END
+IsolationStrategy.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/repos/asf/!svn/ver/789204/labs/platodb/trunk/src/main/java/org.atri.platodb/entity/isolation/IsolationStrategy.java
+END
+AlwaysUpdated.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/repos/asf/!svn/ver/789204/labs/platodb/trunk/src/main/java/org.atri.platodb/entity/isolation/AlwaysUpdated.java
+END

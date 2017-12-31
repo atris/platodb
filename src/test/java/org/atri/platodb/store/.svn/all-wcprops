@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/asf/!svn/ver/789204/labs/platodb/trunk/src/test/java/org.atri.platodb/store
+END
+TestRehash.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/repos/asf/!svn/ver/789204/labs/platodb/trunk/src/test/java/org.atri.platodb/store/TestRehash.java
+END
+StoreTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/repos/asf/!svn/ver/759274/labs/platodb/trunk/src/test/java/org.atri.platodb/store/StoreTest.java
+END
+TestCursor.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/repos/asf/!svn/ver/789204/labs/platodb/trunk/src/test/java/org.atri.platodb/store/TestCursor.java
+END
+TestStoreAccessors.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/repos/asf/!svn/ver/789204/labs/platodb/trunk/src/test/java/org.atri.platodb/store/TestStoreAccessors.java
+END
+TestPostings.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/repos/asf/!svn/ver/789204/labs/platodb/trunk/src/test/java/org.atri.platodb/store/TestPostings.java
+END

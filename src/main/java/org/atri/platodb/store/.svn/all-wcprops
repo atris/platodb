@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/repos/asf/!svn/ver/792517/labs/platodb/trunk/src/main/java/org.atri.platodb/store
+END
+StoreInconsistencyException.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/repos/asf/!svn/ver/759796/labs/platodb/trunk/src/main/java/org.atri.platodb/store/StoreInconsistencyException.java
+END
+StoreError.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/repos/asf/!svn/ver/759796/labs/platodb/trunk/src/main/java/org.atri.platodb/store/StoreError.java
+END
+Configuration.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/repos/asf/!svn/ver/759796/labs/platodb/trunk/src/main/java/org.atri.platodb/store/Configuration.java
+END
+StoreException.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/repos/asf/!svn/ver/759796/labs/platodb/trunk/src/main/java/org.atri.platodb/store/StoreException.java
+END
+Store.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/repos/asf/!svn/ver/792517/labs/platodb/trunk/src/main/java/org.atri.platodb/store/Store.java
+END
+Cursor.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/repos/asf/!svn/ver/789204/labs/platodb/trunk/src/main/java/org.atri.platodb/store/Cursor.java
+END
+Log.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/repos/asf/!svn/ver/755213/labs/platodb/trunk/src/main/java/org.atri.platodb/store/Log.java
+END
+Accessor.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/repos/asf/!svn/ver/789204/labs/platodb/trunk/src/main/java/org.atri.platodb/store/Accessor.java
+END

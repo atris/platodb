@@ -1,0 +1,37 @@
+Primary Key Index:s
+    @Entity
+    public static class User implements Serializable {
+      private static final long serialVersionUID = 1l;
+        @PrimaryKey
+        @Sequence
+        private Long identity;
+
+        private String emailAdress;
+        private String password;
+
+        public Long getIdentity() {
+          return PK;
+        ...
+Putting and getting objects:
+    EntityStore store = new EntityStore(new File("platodb"));
+    store.open;
+
+    PrimaryIndex<Long, User> users = store.getPrimaryIndex(Long.class, User.class);
+
+    store.getTxn().begin();
+
+    User user = new User();
+    user.setEmailAdress("a@b.cd");
+    user.setPassword("1");
+    assertNull(user.getId());
+    assertNull(store.put(user));
+    assertNotNull(user.getId());
+
+    user.setPassword("2");
+    User oldUser = store.put(user);
+    assertEquals("1", oldUser.getPassword());
+    assertEquals("2", user.getPassword());
+
+    store.getTxn().commit();
+
+     

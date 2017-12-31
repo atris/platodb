@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/repos/asf/!svn/ver/788856/labs/platodb/trunk/src/main/java/org.atri.platodb/store/sequence
+END
+UnsafeSequenceManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/repos/asf/!svn/ver/759274/labs/platodb/trunk/src/main/java/org.atri.platodb/store/sequence/UnsafeSequenceManager.java
+END
+FilebasedSequenceManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/repos/asf/!svn/ver/788856/labs/platodb/trunk/src/main/java/org.atri.platodb/store/sequence/FilebasedSequenceManager.java
+END
+SequenceManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/repos/asf/!svn/ver/759274/labs/platodb/trunk/src/main/java/org.atri.platodb/store/sequence/SequenceManager.java
+END
